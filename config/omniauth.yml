@@ -1,0 +1,17 @@
+development:
+  github:
+    key: "your-github-api-key"
+    secret: "your-github-api-secret"
+  ruffnote: 
+    key: "your-ruffnote-api-key"
+    secret: "your-ruffnote-api-secret"
+    url: 'http://ruffnote.dev'
+
+production:
+  github:
+    key: <%= ENV['GITHUB_KEY'] %>
+    secret: <%= ENV['GITHUB_SECRET'] %>
+  ruffnote: 
+    key: <%= ENV['RUFFNOTE_KEY'] %>
+    secret: <%= ENV['RUFFNOTE_SECRET_SECRET'] %>
+    url: <%= ENV['RUFFNOTE_URL'] %>

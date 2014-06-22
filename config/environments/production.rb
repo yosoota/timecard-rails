@@ -20,7 +20,8 @@ Timecard::Application.configure do
   # config.action_dispatch.rack_cache = true
 
   # Disable Rails's static asset server (Apache or nginx will already do this).
-  config.serve_static_assets = false
+  #config.serve_static_assets = false
+  config.serve_static_assets = true
 
   # Compress JavaScripts and CSS.
   config.assets.js_compressor = :uglifier
@@ -64,16 +65,16 @@ Timecard::Application.configure do
   # Ignore bad email addresses and do not raise email delivery errors.
   # Set this to true and configure the email server for immediate delivery to raise delivery errors.
   # config.action_mailer.raise_delivery_errors = false
-  config.action_mailer.delivery_method = :smtp
-  config.action_mailer.smtp_settings = {
-    address: "smtp.gmail.com",
-    port: 587,
-    domain: "timecard-rails.herokuapp.com",
-    user_name: ENV["GMAIL_USERNAME"],
-    password: ENV["GMAIL_PASSWORD"],
-    authentication: :plain,
-    enable_starttls_auto: true
-  }
+  #  config.action_mailer.delivery_method = :smtp
+  # config.action_mailer.smtp_settings = {
+  #   address: "smtp.gmail.com",
+  #   port: 587,
+  #   domain: "timecard-rails.herokuapp.com",
+  #   user_name: ENV["GMAIL_USERNAME"],
+  #   password: ENV["GMAIL_PASSWORD"],
+  #   authentication: :plain,
+  #   enable_starttls_auto: true
+  # }
 
   # Enable locale fallbacks for I18n (makes lookups for any locale fall back to
   # the I18n.default_locale when a translation can not be found).
@@ -87,10 +88,10 @@ Timecard::Application.configure do
 
   # Use default logging formatter so that PID and timestamp are not suppressed.
   config.log_formatter = ::Logger::Formatter.new
-  config.middleware.use ExceptionNotification::Rack,
-    email: {
-      email_prefix: "[timecard-rails] ",
-      sender_address: %{"notifier" <notifier@timecard-rails.herokuapp.com>},
-      exception_recipients: %w{nishiko@mindia.jp miyake.kota@gmail.com}
-    }
+  # config.middleware.use ExceptionNotification::Rack,
+  #   email: {
+  #     email_prefix: "[timecard-rails] ",
+  #     sender_address: %{"notifier" <notifier@timecard-rails.herokuapp.com>},
+  #     exception_recipients: %w{nishiko@mindia.jp miyake.kota@gmail.com}
+  #   }
 end
